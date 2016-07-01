@@ -45,10 +45,45 @@ var defaults = {
 
 nightmare 
     .goto('https://accounts.craigslist.org/login/home')
-    // .then(function (result) {
-    //   console.log(result)
-    // })
-    // .end()
+    .wait(2000)
+    // Login Page
+    .insert('#inputEmailHandle', defaults.email)
+    .insert('#inputPassword', defaults.password)
+    .click('.login-page-btn')
+    // Dashboard
+    .wait('.new_posting_thing')
+    // .select('.new_posting_thing [name=areaabb]', 'sea')
+    .click('.new_posting_thing input[type=submit]')
+    // Posting type
+    // .wait('.picker input[name=id]')
+    // .click('.picker input[name=id][value=so]')
+    // .click('.picker .pickbutton')
+    // Posting subject
+    // .wait(2000)
+    // .wait('.picker .pickbutton')
+    // .wait('.picker input[name=id][value="82"]')
+    // .click('.picker input[name=id][value="82"]')
+    //hidden input: U2FsdGVkX18yMzU3NTIzNZmQxarlzJGxL4hAt2d4PrClVs-flKytM41Bh0d-Rfw-   
+    // Posting location
+    // .wait(1000)
+    // .wait('.picker .pickbutton')
+    // .wait('.picker input[name=n][value="1"]')
+    // .click('.picker input[name=n][value="1"]')
+    // .click('.picker .pickbutton')
+    //hidden input: U2FsdGVkX185MzgyOTM4Mj66W1mMwNsODTDpmXYQ7aZNqw751kKGTv-pxnvxtEmp3LIJJ8JiBNA
+    // Posting details
+    // .wait(2000)
+    // .wait('.bigbutton')
+    // .click('#contact_phone_ok')
+    // .click('#contact_text_ok')
+    // .insert('#contact_phone', defaults.phone)
+    // .insert('#contact_name', defaults.contact_name)
+    // .insert('#PostingTitle', defaults.posting_title)
+    // .insert('#postal_code', defaults.postal_code)
+    // .insert('#PostingBody', defaults.posting_content)
+    // .wait(1500)
+    // .click('.bigbutton')
+
     .catch(function (error) {
       console.log('error: ', error)
     }); 
